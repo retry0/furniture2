@@ -6,12 +6,39 @@
   </ion-navbar>
 </ion-header>
 
+<!--tambah user-->
 <ion-content>
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
+    <ion-list-header>
+      Tambah data user
+    </ion-list-header>
     <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+      <ion-label stacked> Name</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked> Email</ion-label>
+      <ion-input type="text" [(ngModel)]="useremail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked> Password</ion-label>
+      <ion-input type="password" [(ngModel)]="userpassword"></ion-input>
+    </ion-item>
+    <div padding>
+      <button ion-button full (click)="addUser()">Tambah User</button>
+    </div>
+  </ion-list>
+
+
+  <ion-list>
+    <ion-item *ngFor="let data of userlist">
+      <ion-avatar item-start>
+        <ion-icon name="ios-contact" item-end></ion-icon>
+      </ion-avatar>
+      <h2>{{data.name}}</h2>
+      <p>{{data.useremail}}</p>
+      <button ion-button clear item-end (click)="viewUser(data)">View</button>
+      <button ion-button clear item-end (click)="deleteUser(data.userid)">Hapus </button>
     </ion-item>
   </ion-list>
 </ion-content>

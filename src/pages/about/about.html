@@ -7,5 +7,25 @@
 </ion-header>
 
 <ion-content padding>
+<ion-card>
+  <ion-card-content>
+    <!--butttuon untuk mendapatkan location-->
+    <button ion-button full (click)="getPosition()">Get Postion</button>
+  <p>position: {{coords}}</p>
+    <p>accuracy: {{accuracy}}</p>
+    <p *ngIf="error">{{error}}</p>
+  </ion-card-content>
+</ion-card>
 
+  <ion-card>
+    <ion-card-content>
+      <button ion-button full (click)="sendEmail()">Send Email</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-datetime displayFormat="DD-MM-YYY HH:mm" [(ngModel)]="today"></ion-datetime>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
