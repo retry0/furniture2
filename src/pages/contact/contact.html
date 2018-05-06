@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary-yellow">
     <ion-title>
       Contact
     </ion-title>
@@ -7,7 +7,7 @@
 </ion-header>
 
 <!--tambah user-->
-<ion-content>
+<ion-content color="primary-yellow">
   <ion-list>
     <ion-list-header>
       Tambah data user
@@ -25,7 +25,7 @@
       <ion-input type="password" [(ngModel)]="userpassword"></ion-input>
     </ion-item>
     <div padding>
-      <button ion-button full (click)="addUser()">Tambah User</button>
+      <button ion-button full (click)="addUser()" color="secondary">Tambah User</button>
     </div>
   </ion-list>
 
@@ -37,8 +37,8 @@
       </ion-avatar>
       <h2>{{data.name}}</h2>
       <p>{{data.useremail}}</p>
-      <button ion-button clear item-end (click)="viewUser(data)">View</button>
-      <button ion-button clear item-end (click)="deleteUser(data.userid)">Hapus </button>
+      <button ion-button clear (click)="viewUser(data)" color="secondary" >View</button>
+      <button ion-button clear  (click)="deleteUser(data.userid)" color="danger">Hapus </button>
     </ion-item>
   </ion-list>
 </ion-content>
